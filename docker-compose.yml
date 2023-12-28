@@ -37,7 +37,7 @@ services:
     environment:
       - APP_ENV=${APP_ENV}
       - APP_SECRET=${APP_SECRET}
-      - DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@database:3306/${DATABASE_NAME}?serverVersion=5.7
+      - DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@database:3306/${DATABASE_NAME}?serverVersion=mariadb-10.5.8
     volumes:
       - ./symfony:/var/www
 
@@ -53,7 +53,7 @@ services:
     depends_on:
       - php-fpm
     ports:
-      - "80:80"
+      - "81:80"
       - "443:443"
 
 
